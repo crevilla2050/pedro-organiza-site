@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pedro Organiza — Music Library Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <div class="app-root" style="flex-direction: column;">
+
+    <!-- ================= HERO ================= -->
+
+    <header style="
+      padding: 48px 32px;
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-bg-secondary);
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    ">
+      <img src="assets/logo.png" alt="Pedro Organiza" style="width: 96px; height: 96px;" />
+
+      <div>
+        <h1 style="margin: 0 0 8px 0;">Pedro Organiza</h1>
+        <p style="margin: 0; color: var(--color-text-secondary); max-width: 720px;">
+          A non-destructive, local-first music library intelligence system for large, messy, real-world collections.
+        </p>
+      </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main style="flex: 1; padding: 48px 32px; max-width: 1100px; width: 100%; margin: 0 auto;">
+
+      <!-- WHAT IS PEDRO -->
+
+      <section style="margin-bottom: 64px;">
+        <h2>What is Pedro?</h2>
+        <p style="color: var(--color-text-secondary); max-width: 800px;">
+          Pedro Organiza is a knowledge-driven music library analyzer and organizer.
+          Instead of modifying your files automatically, it builds a complete local SQLite knowledge base,
+          detects duplicates and variants, surfaces ambiguities, and lets you review everything before any action is applied.
+        </p>
+
+        <ul style="color: var(--color-text-secondary);">
+          <li>Designed for tens of thousands of tracks</li>
+          <li>Safe, auditable, deterministic workflows</li>
+          <li>No silent destructive actions</li>
+          <li>Local-first, no cloud, no subscriptions</li>
+        </ul>
+      </section>
+
+      <!-- CORE PRINCIPLES -->
+
+      <section style="margin-bottom: 64px;">
+        <h2>Core Principles</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+
+          <div class="startup-card">
+            <strong>Knowledge Before Action</strong>
+            <p class="bulk-hint">
+              All analysis happens first. Files are never modified during ingestion or analysis.
+            </p>
+          </div>
+
+          <div class="startup-card">
+            <strong>Human in the Loop</strong>
+            <p class="bulk-hint">
+              Pedro assists; it never overrides your judgment.
+            </p>
+          </div>
+
+          <div class="startup-card">
+            <strong>Database as Source of Truth</strong>
+            <p class="bulk-hint">
+              The filesystem is an execution target, not the database.
+            </p>
+          </div>
+
+          <div class="startup-card">
+            <strong>Deterministic & Auditable</strong>
+            <p class="bulk-hint">
+              Every step is reproducible, inspectable, and reversible.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SCREENSHOTS -->
+
+      <section style="margin-bottom: 64px;">
+        <h2>Interface</h2>
+
+        <div class="screenshot-grid">
+          <img src="assets/screenshot1.jpg" class="screenshot-thumb" alt="Pedro UI 1" />
+          <img src="assets/screenshot2.jpg" class="screenshot-thumb" alt="Pedro UI 2" />
+          <img src="assets/screenshot3.jpg" class="screenshot-thumb" alt="Pedro UI 3" />
+        </div>
+      </section>
+
+      <!-- Modal Overlay -->
+      <div id="screenshot-modal" class="screenshot-modal">
+        <span class="screenshot-close">&times;</span>
+        <img id="screenshot-modal-img" />
+      </div>
+
+
+      <!-- GET STARTED -->
+
+      <section>
+        <h2>Get Started</h2>
+
+        <p style="color: var(--color-text-secondary); max-width: 720px;">
+          Pedro Organiza is free for personal and non-commercial use and runs on Linux, macOS, and Windows.
+          Installation and usage instructions are available on GitHub.
+        </p>
+
+        <a href="https://github.com/crevilla2050/pedro-organiza" class="btn-primary" style="text-decoration: none;">
+          View on GitHub
+        </a>
+      </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer style="
+      padding: 24px 32px;
+      border-top: 1px solid var(--color-border);
+      background: var(--color-bg-secondary);
+      color: var(--color-text-muted);
+      font-size: 13px;
+      text-align: center;
+    ">
+      © 2026 Carlos Revilla — Pedro Organiza  
+      <br />
+      Knowledge first. Actions later.
+    </footer>
+
+  </div>
+<script>
+  const modal = document.getElementById("screenshot-modal");
+  const modalImg = document.getElementById("screenshot-modal-img");
+  const closeBtn = document.querySelector(".screenshot-close");
+
+  document.querySelectorAll(".screenshot-thumb").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.add("show");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.classList.remove("show");
+    }
+  });
+</script>
+
+</body>
+</html>
+
