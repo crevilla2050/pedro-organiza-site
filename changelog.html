@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pedro Organiza — Changelog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+<div class="app-root" style="flex-direction: column;">
+
+  <!-- HEADER -->
+
+  <header style="
+    padding: 40px 32px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-secondary);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  ">
+
+    <div style="display:flex; gap:18px; align-items:center;">
+      <img src="assets/logo.png" style="width:72px;height:72px;" />
+
+      <div>
+        <h1 style="margin:0;">Changelog</h1>
+        <p style="margin:0;color:var(--color-text-secondary);">
+          Version history for Pedro Organiza
+        </p>
+      </div>
+    </div>
+
+    <a href="index.html"
+       class="btn-secondary"
+       style="text-decoration:none;">
+       ← Back to Home
+    </a>
+
+  </header>
+
+
+  <!-- CONTENT -->
+
+  <main style="
+    flex:1;
+    padding:48px 32px;
+    max-width:900px;
+    margin:0 auto;
+    line-height:1.65;
+  ">
+
+    <p style="color:var(--color-text-secondary);">
+      Pedro follows semantic versioning.
+      Breaking changes are always clearly documented.
+    </p>
+
+
+    <!-- VERSION -->
+
+    <section style="margin-top:48px;">
+
+      <h2>0.8.0 — A Deterministic Music Library Manager Built for Safety</h2>
+
+      <p style="color:var(--color-accent-yellow); font-weight:600;">
+        Architecture Release
+      </p>
+
+      <p>
+        This release solidifies Pedro’s core architecture and safety model,
+        focusing on predictable and reviewable filesystem operations.
+      </p>
+
+      <h3>🔒 Deterministic Filesystem Engine</h3>
+
+      <ul>
+        <li>The same database state always produces the same filesystem result.</li>
+        <li>No hidden side effects.</li>
+        <li>No silent modifications.</li>
+        <li>Every action is computed first and executed in a controlled way.</li>
+      </ul>
+
+      <p>
+        This makes Pedro especially reliable for large music libraries.
+      </p>
+
+      <h3>👀 Preview-First Architecture</h3>
+
+      <p>Before anything touches your filesystem, you can preview exactly what will happen.</p>
+
+<pre style="background:var(--color-bg-tertiary);padding:16px;border-radius:6px;">
+pedro preview
+pedro preview --limit 10
+pedro apply --dry-run
+</pre>
+
+      <p>
+        Nothing happens unless you explicitly apply it.
+        Safety is the default.
+      </p>
+
+      <h3>Schema-Safe Database Migrations</h3>
+
+      <ul>
+        <li>Automatic, non-destructive schema upgrades</li>
+        <li>No full re-scan required</li>
+        <li>No data loss</li>
+        <li>No manual SQL</li>
+      </ul>
+
+      <h3>🗑 Improved Deletion Safety</h3>
+
+      <ul>
+        <li>Files are quarantined by default</li>
+        <li>Permanent deletion requires explicit confirmation</li>
+        <li>Interactive DELETE safeguard</li>
+        <li>Lock file prevents concurrent apply operations</li>
+      </ul>
+
+      <h3>🧭 CLI Structure Improvements</h3>
+
+      <ul>
+        <li><code>pedro db</code> namespace</li>
+        <li><code>pedro analyze</code> (alias: scan)</li>
+        <li><code>pedro preview</code></li>
+        <li><code>pedro apply</code></li>
+        <li><code>pedro version</code></li>
+      </ul>
+
+      <p>
+        This release strengthens the foundation before expanding functionality.
+      </p>
+
+    </section>
+
+
+    <!-- 0.7 -->
+
+    <section style="margin-top:64px;">
+      <h2>0.7.0 — Structural Confidence Release</h2>
+
+      <p>
+        Version 0.7.0 established the foundational system boundaries that support
+        deterministic operations and operator control.
+      </p>
+
+      <h3>Added</h3>
+      <ul>
+        <li>Canonical CLI spine</li>
+        <li>Configuration backbone</li>
+        <li>Persistent active database tracking</li>
+        <li>Startup inspection utilities</li>
+        <li>Genre management command set</li>
+        <li>i18n-aware CLI output</li>
+      </ul>
+
+      <h3>Improved</h3>
+      <ul>
+        <li>Clear separation between analysis and execution</li>
+        <li>Database as single source of truth</li>
+        <li>Expanded schema evolution safeguards</li>
+      </ul>
+    </section>
+
+
+    <!-- 0.5 -->
+
+    <section style="margin-top:64px;">
+      <h2>0.5.0 — Execution Backbone & Lifecycle Model</h2>
+
+      <p>
+        This release transformed Pedro from an analysis tool into an operational system.
+      </p>
+
+      <ul>
+        <li>Initial execution engine</li>
+        <li>File lifecycle tracking</li>
+        <li>Quarantine-based soft delete</li>
+        <li>Expanded metadata support</li>
+      </ul>
+    </section>
+
+
+    <!-- 0.3 -->
+
+    <section style="margin-top:64px;">
+      <h2>0.3.0 — Normalization & Signal Foundations</h2>
+
+      <ul>
+        <li>Canonical normalization pipeline</li>
+        <li>Duplicate-detection signals</li>
+        <li>Alias relationship views</li>
+        <li>Forward-compatible schema upgrades</li>
+      </ul>
+    </section>
+
+
+    <!-- 0.1 -->
+
+    <section style="margin-top:64px;">
+      <h2>0.1.0 — Initial Release</h2>
+
+      <ul>
+        <li>Initial CLI</li>
+        <li>SQLite knowledge ingestion</li>
+        <li>Metadata extraction</li>
+        <li>SHA-256 hashing</li>
+        <li>Optional fingerprinting</li>
+        <li>Album art discovery</li>
+        <li>Safe, non-destructive design</li>
+      </ul>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer style="
+    padding:24px;
+    border-top:1px solid var(--color-border);
+    background:var(--color-bg-secondary);
+    text-align:center;
+    font-size:13px;
+    color:var(--color-text-muted);
+  ">
+    Pedro Organiza — Knowledge first. Actions later.
+  </footer>
+
+</div>
+
+</body>
+</html>
