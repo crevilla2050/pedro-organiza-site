@@ -59,6 +59,60 @@
 
 
     <!-- VERSION -->
+     <section style="margin-top:48px;">
+
+      <h2>0.8.3 — Duplicate Intelligence & CLI Maturity</h2>
+
+      <p style="color:var(--color-accent-yellow); font-weight:600;">
+        Feature Expansion Release
+      </p>
+
+      <p>
+        Version 0.8.3 expands Pedro’s analysis layer with deterministic duplicate intelligence
+        and a more complete operator-facing CLI.
+      </p>
+
+      <h3>🧠 Deterministic Duplicate Clustering</h3>
+
+      <ul>
+        <li>Stable duplicate clusters built from reproducible signals</li>
+        <li>Hash + fingerprint correlation</li>
+        <li>Transparent cluster membership</li>
+        <li>Deterministic cluster ordering</li>
+      </ul>
+
+      <h3>🎯 Advisory Primary Suggestions</h3>
+
+      <ul>
+        <li>Deterministic primary recommendations</li>
+        <li>Configurable policies (lossless, size, container preference)</li>
+        <li>Transparent ranking output</li>
+        <li>Never automatic — advisory only</li>
+      </ul>
+
+      <h3>📦 Container Detection Improvements</h3>
+
+      <ul>
+        <li>Hybrid container detection (header + extension)</li>
+        <li>More robust duplicate comparisons</li>
+        <li>Safer handling of mislabeled files</li>
+      </ul>
+
+      <h3>🧭 CLI Improvements</h3>
+
+      <ul>
+        <li><code>pedro dupes stats</code></li>
+        <li><code>pedro dupes largest</code></li>
+        <li><code>pedro dupes suggest</code></li>
+        <li>Better schema resilience and migration handling</li>
+      </ul>
+
+      <p>
+        This release strengthens Pedro’s ability to reason about real-world libraries
+        while preserving its preview-first, deterministic philosophy.
+      </p>
+
+    </section>
 
     <section style="margin-top:48px;">
 
@@ -226,7 +280,7 @@ pedro apply --dry-run
     font-size:13px;
     color:var(--color-text-muted);
   ">
-    Pedro Organiza — Knowledge first. Actions later.
+    Pedro Organiza — Knowledge first. Actions later. Determinism always.
   </footer>
 
 </div>

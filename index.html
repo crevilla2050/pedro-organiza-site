@@ -28,13 +28,16 @@
       <div>
         <h1 style="margin: 0 0 8px 0;">Pedro Organiza</h1>
         <p style="margin: 0; color: var(--color-text-secondary); max-width: 720px;">
-          A non-destructive, local-first music library intelligence system for large, messy, real-world collections.
+          A deterministic, non-destructive music library intelligence engine for large, messy, real-world collections.
         </p>
         <p style="margin-top:8px; color: var(--color-accent-yellow); font-weight:600;">
           Built for collectors who fear data loss.
         </p>
         <p style="margin: 0; color: var(--color-text-secondary); max-width: 720px;">
           Pedro is ideal for collectors, archivists, DJs, audiophiles, and anyone whose library has outgrown traditional players.
+        </p>
+        <p style="margin: 8px 0 0 0; color: var(--color-text-secondary);">
+          Now featuring deterministic duplicate intelligence and preview-first restructuring workflows.
         </p>
       </div>
     </header>
@@ -49,9 +52,9 @@
         
         <h2>What is Pedro?</h2>
         <p style="color: var(--color-text-secondary); max-width: 800px;">
-          Pedro Organiza is a knowledge-driven music library analyzer and organizer.
-          Instead of modifying your files automatically, it builds a complete local SQLite knowledge base,
-          detects duplicates and variants, surfaces ambiguities, and lets you review everything before any action is applied.
+          Pedro Organiza is a deterministic, knowledge-driven music library analyzer and restructuring engine.
+          It builds a local SQLite knowledge base, detects duplicates and variants, clusters ambiguous files,
+          and lets you review everything before any action is applied.
         </p>
 
         <ul style="color: var(--color-text-secondary);">
@@ -126,6 +129,32 @@
       </section>
 
       <section style="margin-bottom: 64px;">
+        <h2>Deterministic Duplicate Intelligence</h2>
+
+        <div style="max-width: 820px; color: var(--color-text-secondary);">
+
+          <p>
+            Pedro 0.8 introduces deterministic duplicate clustering built on reproducible signals
+            instead of opaque heuristics.
+          </p>
+
+          <ul>
+            <li>Exact hash matching</li>
+            <li>Audio fingerprint correlation</li>
+            <li>Metadata similarity signals</li>
+            <li>Transparent duplicate clusters</li>
+            <li>Advisory primary suggestions (never automatic)</li>
+          </ul>
+
+          <p>
+            Every duplicate decision is explainable, reproducible, and reviewable —
+            no black boxes, no surprise deletions.
+          </p>
+
+        </div>
+      </section>
+
+      <section style="margin-bottom: 64px;">
         <h2>Safety by Design</h2>
 
         <div style="max-width: 820px; color: var(--color-text-secondary);">
@@ -142,6 +171,7 @@
             <li>Quarantine instead of silent deletion</li>
             <li>Explicit confirmation required for permanent deletes</li>
             <li>Local SQLite knowledge base — your data stays yours</li>
+            <li>Database-backed rollbacks and full auditability</li>
           </ul>
 
           <p>
@@ -190,8 +220,10 @@
 
           <pre style="background: var(--color-bg-tertiary); padding: 16px; border-radius: 6px;">
             pedro db set my_library.db
-            pedro analyze --src /music --lib /library
+            pedro migrate
+            pedro analyze --src /music --lib /library --with-fingerprint
             pedro preview
+            pedro dupes stats
             pedro apply --dry-run
           </pre>
 
@@ -210,6 +242,9 @@
         <p style="color: var(--color-text-secondary); max-width: 720px;">
           Pedro Organiza is free for personal and non-commercial use and runs on Linux, macOS, and Windows.
           Installation and usage instructions are available on GitHub.
+        </p>
+        <p style="color: var(--color-text-muted); font-size: 14px;">
+          Pedro is actively used on large real-world libraries (50k+ tracks) and evolving rapidly through community feedback.
         </p>
         <a href="changelog.html" class="btn-secondary" style="text-decoration:none;">
           View Changelog
@@ -233,7 +268,7 @@
     ">
       © 2026 Carlos Revilla — Pedro Organiza  
       <br />
-      Knowledge first. Actions later.
+      Knowledge first. Actions later. Determinism always.
     </footer>
 
   </div>
